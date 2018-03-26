@@ -43,6 +43,20 @@ public class LinkedList<T> {
         }
     }
 
+    public void delete(int index) {
+        if (index == 0) {
+            mRootNode = mRootNode.getNextNode();
+            mLength--;
+        } else if (index < mLength) {
+            Node<T> temp = mRootNode;
+            for (int i = 0; i < (index - 1); i++) {
+                temp = temp.getNextNode();
+            }
+            temp.setNextNode(temp.getNextNode().getNextNode());
+            mLength--;
+        }
+    }
+
     public int getLength() {
         return mLength;
     }
