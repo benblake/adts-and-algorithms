@@ -28,4 +28,8 @@ public class Stack<T> {
         mRootNode = new Node<>(data, mRootNode);
         mLength++;
     }
+
+    public int getLength() {
+        return mLength;
+    }
 }

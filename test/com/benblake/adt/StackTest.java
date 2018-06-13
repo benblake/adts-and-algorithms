@@ -11,6 +11,7 @@ public class StackTest {
         Stack<Object> stack = new Stack<>();
 
         assertNull(stack.pop());
+        assertEquals(0, stack.getLength());
     }
 
     @Test
@@ -18,7 +19,9 @@ public class StackTest {
         Stack<Object> stack = new Stack<>();
         stack.push(new Integer(5));
 
+        assertEquals(1, stack.getLength());
         assertEquals(5, stack.pop());
+        assertEquals(0, stack.getLength());
         assertNull(stack.pop());
     }
 
@@ -28,6 +31,7 @@ public class StackTest {
         stack.push(new Integer(5));
         stack.push(new Integer(6));
 
+        assertEquals(2, stack.getLength());
         assertEquals(6, stack.pop());
         assertEquals(5, stack.pop());
         assertNull(stack.pop());
